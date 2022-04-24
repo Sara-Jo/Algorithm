@@ -5,12 +5,7 @@ n, m = map(int, input().split())
 table = [list(map(int, input().split())) for _ in range(n)]
 prefix_sum = [[0 for _ in range(n + 1)] for _ in range(n + 1)]
 
-tmp = 0
-for i in range(n):
-    tmp += table[0][i]
-    prefix_sum[1][i + 1] = tmp
-
-for i in range(2, n + 1):
+for i in range(1, n + 1):
     tmp = 0
     for j in range(1, n + 1):
         tmp += table[i - 1][j - 1]
