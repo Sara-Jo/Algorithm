@@ -56,6 +56,9 @@ def count_by_value(array, x):
     # x가 마지막으로 등장한 인덱스 계산
     b = last(array, x, 0, n - 1)
 
+    if b == None:
+        return 0 
+        
     # 개수를 반환
     return b - a + 1
 
@@ -80,7 +83,7 @@ def last(array, target, start, end):
         return None
     mid = (start + end) // 2
     # 해당 값을 가지는 원소 중에서 가장 오른쪽에 있는 경우에만 인덱스 반환
-    if (mid == 0 or target < array[mid + 1] and array[mid] == target):
+    if (mid == n - 1 or target < array[mid + 1] and array[mid] == target):
         return mid
     # 중간점의 값 보다 찾고자 하는 값이 작은 경우 왼쪽 확인
     elif array[mid] > target:
