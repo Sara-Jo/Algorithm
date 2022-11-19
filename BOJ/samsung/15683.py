@@ -53,8 +53,11 @@ def dfs(depth, arr):
     tmp = copy.deepcopy(arr)
     cctv, x, y = cctv_list[depth]
     for i in direction[cctv]:
+        # CCTV 감시영역 구하는 함수 호출
         watch(tmp, i, x, y)
+        # 현재 Case에서 타 모든 CCTV 재귀적 탐색
         dfs(depth + 1, tmp)
+        # CCTV를 다른 방향으로 회전시킨 후 재탐색하기 위함
         tmp = copy.deepcopy(arr)
 
 
