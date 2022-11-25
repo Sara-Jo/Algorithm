@@ -1,6 +1,6 @@
 import math
 
-#(시간초과)
+# (시간초과)
 # def solution(n, stations, w):
 #     answer = 0
 #     wave = []
